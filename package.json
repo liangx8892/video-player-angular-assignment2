@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "jsonserver": "node_modules/json-server/lib/cli/bin.js --watch src/assets/db.json >> ./json-server.log 2>&1 </dev/null &"
+    "jsonserver": "npx json-server --watch src/assets/db.json"
   },
   "private": true,
   "dependencies": {
