@@ -12,8 +12,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build and Run
 
-1. Run `npm install`   
-2. Run `npm run jsonserver && npm start`
+1. Run `npm install -g @angular/cli`   
+2. Run `npm install`   
+3. Run `npm run jsonserver`   
+4. Open a new terminal   
+5. Run `npm start`   
 
 ## Running unit tests
 
