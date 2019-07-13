@@ -1,0 +1,43 @@
+.navbar{
+    /*background-color: #6161ff;*/
+    background-color: #4263eb;
+    color: white;
+    user-select: none;
+}
+
+.navbar{
+    .navbar-brand{
+        cursor: pointer;
+
+        span{
+            margin-left: 20px;
+            position: relative;
+            bottom: 7px;
+        }
+    }
+}
+
+.menu{
+    list-style-type:none;
+    text-align:center;
+    font-size:14px;
+    position: relative;
+    top: 7px;
+
+    li{
+        float:left;
+        width:100px;
+        padding:10px;
+        margin-right: 20px;
+        cursor: pointer;
+        a{
+            color: #dcdcdc;
+            text-decoration: none;
+        }
+        .active {
+            color: white;
+            font-weight: bolder;
+        }
+        
+    }
+}

@@ -1,0 +1,15 @@
+<div class="card mb-2 m-1 playlist">
+    <div class="card-header"> Sample Online video playlist </div>
+    <div class="card-body">
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item playback" *ngFor="let video of videos"
+                [ngClass]="{ 'active': video.id == currentVideo.id }"
+                (click)="video.id == currentVideo.id || launchPlayback(video)">
+                <i class="fab fa-youtube fa-2x"></i>
+                <h2>{{video.title}}</h2>
+                <p>Duration: {{video.duration}}</p>
+            </li>
+        </ul>
+    </div>
+</div>

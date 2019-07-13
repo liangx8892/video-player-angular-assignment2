@@ -1,0 +1,40 @@
+.playlist{
+    .card-body{
+        padding: 0.25rem;
+    }
+}
+
+.playlist>h1, .playback {
+    margin: .4rem;
+    padding: .3rem;
+    font-size: 1.2rem;
+}
+
+.playback {
+    cursor: pointer;
+    background: left/contain content-box border-box no-repeat white;
+}
+
+.playback.active {
+    background-color: #90d490;
+    cursor: auto;
+}
+
+.playback i {
+    position: relative;
+    top: 13px;
+}
+
+.playback>h2 {
+    display: inline-block;
+    margin: .1rem;
+    font-size: 1rem;
+}
+
+.playback>p {
+    margin: .1rem;
+    font-size: 0.8rem;
+    left: 50px;
+    position: relative;
+}
+

@@ -1,0 +1,45 @@
+<div class="controls">
+    <progress id="progress" #progressBar [value]="ratio * 100" max="100" (click)="seek($event)"></progress>
+    <button id="play" class="player-btn" [disabled]="!paused" title="Play" (click)="play()">
+        <i class="fas fa-play-circle"></i>
+    </button>
+    <button id="pause" class="player-btn" [disabled]="paused" title="Pause" (click)="pause()">
+        <i class="fas fa-pause-circle"></i>
+    </button>
+    <button id="stop" class="player-btn" [disabled]="paused" title="Stop" (click)="stop()">
+        <i class="fas fa-stop-circle"></i>
+    </button>
+    <button id="reload" class="player-btn" title="Reload" (click)="reload()">
+        <i class="fas fa-undo-alt"></i>
+    </button>
+
+    <button id="minus" class="player-btn" title="Volume down" [disabled]="volume === 0" (click)="changeVolume(-0.1)">
+        <i class="fas fa-minus-circle"></i>
+    </button>
+    <input id="vol-control" type="range" min="0" max="100" step="10" [value]="volume * 100"
+        (change)="setVolume($event.target.value)" />
+    <button id="plus" class="player-btn" title="Volume up" [disabled]="volume === 1" (click)="changeVolume(0.1)">
+        <i class="fas fa-plus-circle"></i>
+    </button>
+    <button id="mute-toggle" class="player-btn" title="Mute/Unmute" (click)="toggleMute()">
+        <i class="fas" [ngClass]="{ 'fa-volume-down': !muted, 'fa-volume-mute': muted }"></i>
+    </button>
+
+    <span class="control-right">
+        <button id="like" class="player-btn" title="Like" (click)="like()">
+            <i class="fa-thumbs-up" [ngClass]="{ 'far': !liked, 'fas': liked }"></i>
+            <span id="like-num" *ngIf="currentVideo">{{currentVideo.likes}}</span>
+            <span id="like-num" *ngIf="!currentVideo">0</span>
+        </button>
+        <button id="unlike" class="player-btn" title="Unlike" (click)="unlike()">
+            <i class="fa-thumbs-down" [ngClass]="{ 'far': !unliked, 'fas': unliked }"></i>
+            <span id="unlike-num" *ngIf="currentVideo">{{currentVideo.unlikes}}</span>
+            <span id="unlike-num" *ngIf="!currentVideo">0</span>
+        </button>
+
+        <span class="time">
+            <span id="currentTime" class="currentTime">{{currentTimeLabel}}</span> /
+            <span id="totalTime" class="totalTime">{{durationLabel}}</span>
+        </span>
+    </span>
+</div>

@@ -1,0 +1,33 @@
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 player">
+                <player
+                    (durationUpdate)="onDurationUpdate($event)"
+                    (ended)="onEnded()"
+                >
+                </player>
+                <controls (playClicked)="play()"
+                    (pauseClicked)="pause()"
+                    (stopClicked)="stop()"
+                    (reloadClicked)="reload()"
+                    (tgMuteClicked)="toggleMute()"
+                    (volClicked)="changeVolume($event)"
+                    (volSelected)="setVolume($event)"
+                    (progressClicked)="seek($event)"
+                    [muted]="video.muted"
+                    [paused]="video.paused"
+                    [volume]="video.volume"
+                    [currentTime]="currentTime"
+                    [currentVideo]="currentVideo"
+                    [duration]="duration"
+                    >
+                </controls>
+            </div>
+            <div class="col-md-4">
+                <playlist
+                    (playbackClicked)="setCurrentVideo($event)"
+                    >
+                </playlist>
+            </div>
+        </div>
+    </div>
